@@ -1,0 +1,52 @@
+﻿
+
+<!-- Recibimos el Model ( aunque venga en blanco)-->
+
+@model MVC_Crud1.Models.ViewModel.UsuariosViewModel
+
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Nuevo", "Usuarios", FormMethod.Post)) { 
+
+    <div class="row ">
+        <div class="col-md-12">
+            <div>
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+
+            </div>
+            
+            <div>
+                @Html.LabelFor(d => d.Apellido)
+                @Html.TextBoxFor(d => d.Apellido, "", new { @class = "form-control" })
+
+            </div>
+
+            <div>
+                @Html.LabelFor(d => d.Edad)
+                @Html.TextBoxFor(d => d.Edad, "", new { @class = "form-control" })
+
+            </div>            
+
+            <br />
+            <br />
+
+            <div style=" text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+}
+
+
+

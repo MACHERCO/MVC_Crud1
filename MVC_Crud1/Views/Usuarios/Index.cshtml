@@ -1,0 +1,42 @@
+﻿
+@model List<MVC_Crud1.Models.ViewModel.ListUsuariosViewModel>
+
+@{ 
+    ViewBag.Title = "Datos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div style="text-align: right;padding:10px">
+    <a href="~/usuarios/nuevo" class=" btn btn-primary"> Nuevo</a>
+
+</div>
+<div class="row">
+    
+    <div class="col-12">
+        <table class="table">
+            <tr>
+                <th> #</th>
+                <th> Nombre</th>
+                <th> Apellido</th>
+                <th> Edad</th></tr>
+            </tr>
+            @foreach( var oElemento in Model)
+            {
+                <tr>
+                    <td> @oElemento.Id</td>
+                    <td> @oElemento.Nombre</td>
+                    <td> @oElemento.Apellido</td>
+                    <td> @oElemento.Edad</td>
+                    <td>
+                        <a class="btn btn-secondary " href=" ~/Usuarios/Editar/@oElemento.Id"> Editar</a>
+                        <a class="btn btn-danger" href=" ~/Usuarios/Eliminar/@oElemento.Id"> Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>
+
